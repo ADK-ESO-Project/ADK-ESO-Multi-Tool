@@ -1,14 +1,13 @@
 import wx
-from MainFrameBase import MainFrame
+from MainFrameBase import MainFrameBase
 
-# Change "oneMinutePython" with the name of your application
 
-class oneMinutePython(wx.App):
+class ADKESOMultiTool(wx.App):
     def OnInit(self):
-        self.m_frame = MainFrame(None)
+        self.m_frame = MainFrameBase(None)
         self.m_frame.Show()
         self.SetTopWindow(self.m_frame)
         return True
 
-app = oneMinutePython(0)
+app = ADKESOMultiTool(0)
 app.MainLoop()
