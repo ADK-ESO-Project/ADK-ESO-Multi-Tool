@@ -2,6 +2,7 @@
 
 import wx
 import gui
+import ftplib
 
 # Implementing MainFrameBase
 class MainFrameBase( gui.MainFrameBase ):
@@ -9,9 +10,17 @@ class MainFrameBase( gui.MainFrameBase ):
 		gui.MainFrameBase.__init__( self, parent )
 	
 	# Handlers for MainFrameBase events.
-	def DownloadButtonClick( self, event ):
-		wx.MessageBox("No Function yet","ESO Multi-Tool")
+	def DownloadButtonClick( ftp,directory,file ):
+		ftp.cwd(directory)
+		f = open(file,"wb")
+		ftp.retrbinary("RETR " + file,f.write)
+		f.close()
+		
+	ftp = ftplib.FTP("ftp.apkmultitool.com")
+	ftp.login("adkesoapp@apkmultitool.com", "adkesoapp")
 	
+	DownloadButtonClick(ftp, "", "testfile.txt")
+    
 	def UploadButtonClick( self, event ):
 		wx.MessageBox("No Function yet","ESO Multi-Tool")
 	
