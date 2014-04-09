@@ -16,7 +16,7 @@ m_mniSaveId = 1001
 m_mniExitId = 1002
 m_mniAboutId = 1003
 DownloadButtonID = 1004
-UploadButtonID = 1005
+SubmitButtonID = 1005
 
 ###########################################################################
 ## Class MainFrameStart
@@ -107,10 +107,10 @@ class MainFrameBase ( wx.Frame ):
 		
 		bSizer5.Add( self.DownloadButton, 0, wx.ALL, 5 )
 		
-		self.UploadButton = wx.Button( self.m_panel, UploadButtonID, u"Upload", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.UploadButton.SetToolTipString( u"Upload Your changes to the database" )
+		self.SubmitButton = wx.Button( self.m_panel, SubmitButtonID, u"Submit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.SubmitButton.SetToolTipString( u"Upload Your changes to the database" )
 		
-		bSizer5.Add( self.UploadButton, 0, wx.ALL, 5 )
+		bSizer5.Add( self.SubmitButton, 0, wx.ALL, 5 )
 		
 		
 		bSizer4.Add( bSizer5, 0, wx.EXPAND, 5 )
@@ -154,7 +154,7 @@ class MainFrameBase ( wx.Frame ):
 		
 		# Connect Events
 		self.DownloadButton.Bind( wx.EVT_BUTTON, self.DownloadButtonClick )
-		self.UploadButton.Bind( wx.EVT_BUTTON, self.UploadButtonClick )
+		self.SubmitButton.Bind( wx.EVT_BUTTON, self.SubmitButtonClick )
 		self.Bind( wx.EVT_MENU, self.m_mniOpenClick, id = self.m_mniOpen.GetId() )
 		self.Bind( wx.EVT_MENU, self.m_mniSaveClick, id = self.m_mniSave.GetId() )
 		self.Bind( wx.EVT_MENU, self.m_mniExitClick, id = self.m_mniExit.GetId() )
@@ -168,7 +168,7 @@ class MainFrameBase ( wx.Frame ):
 	def DownloadButtonClick( self, event ):
 		event.Skip()
 	
-	def UploadButtonClick( self, event ):
+	def SubmitButtonClick( self, event ):
 		event.Skip()
 	
 	def m_mniOpenClick( self, event ):

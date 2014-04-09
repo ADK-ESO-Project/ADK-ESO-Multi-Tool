@@ -12,9 +12,10 @@ class MainFrameBase( gui.MainFrameBase ):
 	# Handlers for MainFrameBase events.
 	def DownloadButtonClick( self, event ):
 		testfile=urllib.URLopener()
-		testfile.retrieve ("http://adkeso.apkmultigames.us/database/testfile.txt", "testfile.txt")
+		testfile.retrieve ("http://adkeso.apkmultigames.us/database/Esohead.lua", "Esohead.lua")
+		wx.MessageBox("Download Completed","ESO Multi-Tool")
     
-	def UploadButtonClick( self, event ):
+	def SubmitButtonClick( self, event ):
 		wx.MessageBox("No Function yet","ESO Multi-Tool")
 	
 	def m_mniOpenClick( self, event ):
